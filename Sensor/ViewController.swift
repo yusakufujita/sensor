@@ -18,15 +18,12 @@ class ViewController: UIViewController {
     var gravityposition: UILabel!
     //使用者の動揺を表すラベル大きさ
     let gravitypositionSize: CGSize = CGSize(width: 20, height: 20)
-    
     //CMMotionManagerのインスタンスを生成
     let motionManager = CMMotionManager()
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let myView = MyView(frame: CGRect(x:0,y:90,width: 500,height: 300))
+        let myView = MyView(frame: CGRect(x:0,y:150,width: 500,height: 300))
            myView.backgroundColor = UIColor.white
            view.addSubview(myView)
         
@@ -40,13 +37,41 @@ class ViewController: UIViewController {
         //更新周期を設定する
         motionManager.accelerometerUpdateInterval = 0.1
                     
+        let handler:CMDeviceMotionHandler = {(motionData:CMDeviceMotion?, error:Error?) -> Void in
+            self.motionAnimation(motionData: motionData,error: error as NSError?)
+        }
         
+        //更新で実行するキューを登録してモーションセンサーをスタートする
+            motionManager.startDeviceMotionUpdates(to: OperationQueue.main, withHandler:handler)
+        }
         // Do any additional setup after loading the view.
+    
+
+    
+    
+    //デバイスモーションセンサーで定期的に実行するメソッド
+    func motionAnimation(motionData:CMDeviceMotion?, error:NSError?){
+        if let motion = motionData{
+            //姿勢センサー(回転角度 ラジアン)
+            //ピッチ(X軸回り回転角度)
+            var pitch = motion.attitude.pitch
+            pitch = round(pitch*100)/100
+         //   pitchLabel.text = String(pitch)
+            //ロール(Y軸回り回転角度)
+            var roll = motion.attitude.roll
+            roll = round(roll*100)/100
+           // rollLabel.text = String(roll)
+            //ヨー(Z軸回り回転角度)
+            var yaw = motion.attitude.yaw
+            yaw = round(yaw*100)/100
+           // yawLabel.text = String(yaw)
+            
+            
+        }
     }
 
+    
     @IBAction func button(_ sender: Any) {
-        
-        
         
     }
     class MyView: UIView {
@@ -65,34 +90,14 @@ class ViewController: UIViewController {
                path.stroke()
            }
        }
-    //モーションデータの取得を開始
-  /* func startSensorUpdates(intervalSeconds:Double) {
-       if motionManager.isDeviceMotionAvailable{
-           motionManager.deviceMotionUpdateInterval = intervalSeconds
-
-           motionManager.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(motion:CMDeviceMotion?, error:Error?) in
-               self.getMotionData(deviceMotion: motion!)
-
-           })
-       }
-   }*/
-
-   //モーションデータの取得(例としてコンソールへ出力)
-   /* func getMotionData(deviceMotion:CMDeviveMotion) {
-        print("attitudeX:", deviceMotion.attitude.pitch)
-        print("attitudeY:", deviceMotion.attitude.roll)
-        print("attitudeZ:", deviceMotion.attitude.yaw)
-        print("gyroX:", deviceMotion.rotationRate.x)
-        print("gyroY:", deviceMotion.rotationRate.y)
-        print("gyroZ:", deviceMotion.rotationRate.z)
-        print("gravityX:", deviceMotion.gravity.x)
-        print("gravityY:", deviceMotion.gravity.y)
-        print("gravityZ:", deviceMotion.gravity.z)
-        print("accX:", deviceMotion.userAcceleration.x)
-        print("accY:", deviceMotion.userAcceleration.y)
-        print("accZ:", deviceMotion.userAccelaration.z)
-    }*/
+    func location
     
- 
- 
+    func labelPositon(_ magneticHeading: CGFloat) -> CGPoint {
+        if 0 < pitch < 0.2{
+            gravityposition.frame =
+            
+        }
+    }
+    
+   
 }
