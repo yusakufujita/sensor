@@ -27,7 +27,18 @@ class ViewController: UIViewController {
            myView.backgroundColor = UIColor.white
            view.addSubview(myView)
         
+        //タイマーを作成する
+        //5秒で繰り返して、終わる
+               Timer.scheduledTimer(
+                   timeInterval: 5,//繰り返す間隔(秒)
+                   target: self,
+                   selector: #selector(self.stop),
+                   userInfo: nil,
+                   repeats: false
+                   
+               )
         
+        //重心動揺を表すラベルの位置と大きさ
         gravityposition = UILabel.init(frame: CGRect(x: 185, y: 180, width: gravitypositionSize.width, height: gravitypositionSize.height))
         gravityposition.text = "G"
         gravityposition.backgroundColor = .red
@@ -65,8 +76,6 @@ class ViewController: UIViewController {
             var yaw = motion.attitude.yaw
             yaw = round(yaw*100)/100
            // yawLabel.text = String(yaw)
-            
-            
         }
     }
 
@@ -90,14 +99,29 @@ class ViewController: UIViewController {
                path.stroke()
            }
        }
-    func location
-    
+   
+
     func labelPositon(_ magneticHeading: CGFloat) -> CGPoint {
+
+        var x: CGFloat = 0
+        var y: CGFloat = 0
+
         if 0 < pitch < 0.2{
+            gravityposition.center.x =
+            gravityposition.center.y
+        } else if 0.2 <= pitch < 0.5 {
+            gravityposition. =
+        } else if 0.5 <= pitch {
             gravityposition.frame =
-            
+        }
+        switch pitch {
+        case 0.2:
+            <#code#>
+        case :
+        case:
+        default:
+            <#code#>
         }
     }
-    
-   
+
 }

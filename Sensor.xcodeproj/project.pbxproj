@@ -17,6 +17,7 @@
 		2250A59623CAEF8F004E0ED7 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2250A59523CAEF8F004E0ED7 /* stop.png */; };
 		2250A59823CAF056004E0ED7 /* TestSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2250A59723CAF056004E0ED7 /* TestSensorViewController.swift */; };
 		22F1C66423DB9AA900470602 /* TestUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1C66323DB9AA900470602 /* TestUIViewController.swift */; };
+		22F8CB8223F58A7A007E0554 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8CB8123F58A7A007E0554 /* TimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2250A59523CAEF8F004E0ED7 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		2250A59723CAF056004E0ED7 /* TestSensorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSensorViewController.swift; sourceTree = "<group>"; };
 		22F1C66323DB9AA900470602 /* TestUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIViewController.swift; sourceTree = "<group>"; };
+		22F8CB8123F58A7A007E0554 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				2250A58323CA3D08004E0ED7 /* SceneDelegate.swift */,
 				2250A58523CA3D08004E0ED7 /* ViewController.swift */,
 				2250A58723CA3D08004E0ED7 /* Main.storyboard */,
+				22F8CB8123F58A7A007E0554 /* TimerViewController.swift */,
 				22F1C66323DB9AA900470602 /* TestUIViewController.swift */,
 				2250A59723CAF056004E0ED7 /* TestSensorViewController.swift */,
 				2250A58A23CA3D0A004E0ED7 /* Assets.xcassets */,
@@ -154,6 +157,7 @@
 				22F1C66423DB9AA900470602 /* TestUIViewController.swift in Sources */,
 				2250A58623CA3D08004E0ED7 /* ViewController.swift in Sources */,
 				220332DB23E15F5C00391A85 /* LineViewController.swift in Sources */,
+				22F8CB8223F58A7A007E0554 /* TimerViewController.swift in Sources */,
 				2250A58223CA3D08004E0ED7 /* AppDelegate.swift in Sources */,
 				2250A59823CAF056004E0ED7 /* TestSensorViewController.swift in Sources */,
 				2250A58423CA3D08004E0ED7 /* SceneDelegate.swift in Sources */,
