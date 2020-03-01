@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s3X-bb-O6S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EMr-0P-nd7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -15,35 +15,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="酔っ払い" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6E-it-V8H">
-                                <rect key="frame" x="94" y="88" width="227" height="46"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姿勢を維持してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6E-it-V8H">
+                                <rect key="frame" x="20" y="88" width="374" height="46"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="1fk-gU-Urd"/>
+                                    <constraint firstAttribute="height" constant="46" id="hgA-Dl-MP9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
-                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehx-L1-oR9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehx-L1-oR9">
                                 <rect key="frame" x="139" y="682" width="129" height="126"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="126" id="e9H-e9-Xqu"/>
+                                    <constraint firstAttribute="height" constant="126" id="oEZ-st-GcL"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="stop"/>
                                 <connections>
-                                    <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bSd-H2-Ndd"/>
+                                    <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QYJ-Qs-LLe"/>
                                     <segue destination="jag-jj-50P" kind="show" id="dk8-wz-YeH"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ehx-L1-oR9" secondAttribute="bottom" constant="54" id="8bk-rI-n9F"/>
-                            <constraint firstItem="Y6E-it-V8H" firstAttribute="centerX" secondItem="Ehx-L1-oR9" secondAttribute="centerX" id="C70-3e-llL"/>
-                            <constraint firstItem="Y6E-it-V8H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="X19-hd-e0u"/>
-                            <constraint firstItem="Y6E-it-V8H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="b7M-fw-cbl"/>
-                            <constraint firstItem="Ehx-L1-oR9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="q35-Fr-jNh"/>
-                            <constraint firstItem="Y6E-it-V8H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u8v-sc-aI5"/>
+                            <constraint firstItem="Y6E-it-V8H" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="20K-fj-YTL"/>
+                            <constraint firstItem="Y6E-it-V8H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5g2-QB-ayb"/>
+                            <constraint firstItem="Ehx-L1-oR9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="8Qo-0Z-u38"/>
+                            <constraint firstItem="Y6E-it-V8H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FYo-1r-Jjg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ehx-L1-oR9" secondAttribute="bottom" constant="54" id="Ur8-HZ-kPN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ehx-L1-oR9" secondAttribute="trailing" constant="146" id="qYk-dW-coS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

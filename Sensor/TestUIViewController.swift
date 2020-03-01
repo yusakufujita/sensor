@@ -28,7 +28,7 @@ class TestUIViewController: UIViewController, CLLocationManagerDelegate {
         //ロケーションマネージャ生成
         locationManager = CLLocationManager()
         //ロケーションマネージャのデリゲート設定
-        locationManager.startUpdatingHeading()
+        locationManager.delegate = self
         //角度の取得開始
         locationManager.startUpdatingHeading()
         

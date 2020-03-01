@@ -18,6 +18,7 @@
 		2250A59823CAF056004E0ED7 /* TestSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2250A59723CAF056004E0ED7 /* TestSensorViewController.swift */; };
 		22F1C66423DB9AA900470602 /* TestUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1C66323DB9AA900470602 /* TestUIViewController.swift */; };
 		22F8CB8223F58A7A007E0554 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8CB8123F58A7A007E0554 /* TimerViewController.swift */; };
+		22F8CB8523FFDF9E007E0554 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F8CB8423FFDF9E007E0554 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		2250A59723CAF056004E0ED7 /* TestSensorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSensorViewController.swift; sourceTree = "<group>"; };
 		22F1C66323DB9AA900470602 /* TestUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIViewController.swift; sourceTree = "<group>"; };
 		22F8CB8123F58A7A007E0554 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		22F8CB8423FFDF9E007E0554 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F8CB8523FFDF9E007E0554 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +55,7 @@
 			children = (
 				2250A58023CA3D08004E0ED7 /* Sensor */,
 				2250A57F23CA3D08004E0ED7 /* Products */,
+				22F8CB8323FFDF9D007E0554 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +84,14 @@
 				2250A58F23CA3D0A004E0ED7 /* Info.plist */,
 			);
 			path = Sensor;
+			sourceTree = "<group>";
+		};
+		22F8CB8323FFDF9D007E0554 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22F8CB8423FFDF9E007E0554 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

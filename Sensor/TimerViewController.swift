@@ -9,7 +9,6 @@
 import UIKit
 
 class TimerViewController: UIViewController {
-
     //値
     @IBOutlet weak var car: UIImageView!
     
@@ -23,12 +22,13 @@ class TimerViewController: UIViewController {
             userInfo: nil,
             repeats: true
             
+            
         )
     }
         //タイマーから定期的に呼び出されるメソッド
        @objc func stop() {
             //水平方向へ移動
-            car.center.x += 10
+            car.center.x += 100
             //右辺から外へ出たら
             let carwidth = car.bounds.width
             if car.center.x>(view.bounds.width + carwidth/2) {
