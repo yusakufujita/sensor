@@ -16,11 +16,11 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         //タイマーを作成する
         Timer.scheduledTimer(
-            timeInterval: 0.1,//繰り返す間隔(秒)
+            timeInterval: 5,//繰り返す間隔(秒)
             target: self,
             selector: #selector(self.stop),
             userInfo: nil,
-            repeats: true
+            repeats: false
             
             
         )
@@ -37,10 +37,8 @@ class TimerViewController: UIViewController {
                 //y座標軸はランダムな高さに変更
                 let viewH = view.bounds.height
                 car.center.y = CGFloat(arc4random_uniform(UInt32(viewH)))
-                
             }
         }
-        
         // Do any additional setup after loading the view.
     }
     

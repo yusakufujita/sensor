@@ -24,15 +24,14 @@
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehx-L1-oR9">
-                                <rect key="frame" x="139" y="682" width="129" height="126"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehx-L1-oR9">
+                                <rect key="frame" x="140" y="672" width="134" height="126"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="126" id="oEZ-st-GcL"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="stop"/>
                                 <connections>
-                                    <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QYJ-Qs-LLe"/>
-                                    <segue destination="jag-jj-50P" kind="show" id="dk8-wz-YeH"/>
+                                    <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mg0-Yg-KRh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,21 +55,96 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="117.85714285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Scene1 View Controller-->
         <scene sceneID="GJB-qQ-awF">
             <objects>
-                <viewController id="jag-jj-50P" sceneMemberID="viewController">
+                <viewController id="jag-jj-50P" customClass="Scene1ViewController" customModule="Sensor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UbT-0e-i6c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="正常です" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xda-2c-S7C">
+                                <rect key="frame" x="41" y="344" width="333" height="92"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sXW-Nk-NqV" firstAttribute="bottom" secondItem="Xda-2c-S7C" secondAttribute="bottom" constant="426" id="8eZ-24-H61"/>
+                            <constraint firstItem="Xda-2c-S7C" firstAttribute="top" secondItem="sXW-Nk-NqV" secondAttribute="top" constant="300" id="QSd-td-CUV"/>
+                            <constraint firstItem="Xda-2c-S7C" firstAttribute="centerX" secondItem="UbT-0e-i6c" secondAttribute="centerX" id="dib-5s-M2z"/>
+                            <constraint firstItem="Xda-2c-S7C" firstAttribute="leading" secondItem="sXW-Nk-NqV" secondAttribute="leading" constant="41" id="egw-DU-8i2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sXW-Nk-NqV"/>
                     </view>
                     <navigationItem key="navigationItem" id="vzm-MN-CA9"/>
+                    <connections>
+                        <outlet property="label" destination="Xda-2c-S7C" id="9jB-C1-uT4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D9Y-YE-uMz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="-42"/>
+            <point key="canvasLocation" x="1923.1884057971015" y="-42.1875"/>
+        </scene>
+        <!--Scene2 View Controller-->
+        <scene sceneID="jNd-Ch-fxO">
+            <objects>
+                <viewController id="LR7-DM-JqG" customClass="Scene2ViewController" customModule="Sensor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pun-j8-etY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="やや酔っています" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoT-H0-LZR">
+                                <rect key="frame" x="41" y="402" width="333" height="92"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hoT-H0-LZR" firstAttribute="centerY" secondItem="Pun-j8-etY" secondAttribute="centerY" id="6eb-Cf-Ev5"/>
+                            <constraint firstItem="hoT-H0-LZR" firstAttribute="top" secondItem="BPP-qJ-8KN" secondAttribute="top" constant="358" id="Sqo-l2-NuN"/>
+                            <constraint firstItem="hoT-H0-LZR" firstAttribute="centerX" secondItem="Pun-j8-etY" secondAttribute="centerX" id="mUa-4U-5zs"/>
+                            <constraint firstItem="hoT-H0-LZR" firstAttribute="leading" secondItem="BPP-qJ-8KN" secondAttribute="leading" constant="41" id="yWi-Jg-lhi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BPP-qJ-8KN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDb-Gz-9Ns" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1940.5797101449277" y="639.50892857142856"/>
+        </scene>
+        <!--Scene3 View Controller-->
+        <scene sceneID="OoS-5g-hBa">
+            <objects>
+                <viewController id="fqU-FR-1MZ" customClass="Scene3ViewController" customModule="Sensor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xwj-sH-jyX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="酔っています" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHF-Du-fUQ">
+                                <rect key="frame" x="41" y="402" width="333" height="92"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UHF-Du-fUQ" firstAttribute="leading" secondItem="kgv-lK-t0e" secondAttribute="leading" constant="41" id="EkR-k2-Bq7"/>
+                            <constraint firstItem="UHF-Du-fUQ" firstAttribute="centerX" secondItem="xwj-sH-jyX" secondAttribute="centerX" id="RpO-NO-ZtK"/>
+                            <constraint firstItem="UHF-Du-fUQ" firstAttribute="centerY" secondItem="xwj-sH-jyX" secondAttribute="centerY" id="gtb-RQ-PcC"/>
+                            <constraint firstItem="UHF-Du-fUQ" firstAttribute="top" secondItem="kgv-lK-t0e" secondAttribute="top" constant="358" id="zcC-nv-giY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kgv-lK-t0e"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ltl-Or-kfm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1939" y="1355"/>
         </scene>
         <!--Test Sensor View Controller-->
         <scene sceneID="ElO-RV-kgo">

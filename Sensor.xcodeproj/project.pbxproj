@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		220332DB23E15F5C00391A85 /* LineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220332DA23E15F5C00391A85 /* LineViewController.swift */; };
+		220AC67C2414E774008D9D92 /* Scene2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220AC67B2414E774008D9D92 /* Scene2ViewController.swift */; };
+		220AC67E2414E78D008D9D92 /* Scene3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220AC67D2414E78D008D9D92 /* Scene3ViewController.swift */; };
 		2250A58223CA3D08004E0ED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2250A58123CA3D08004E0ED7 /* AppDelegate.swift */; };
 		2250A58423CA3D08004E0ED7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2250A58323CA3D08004E0ED7 /* SceneDelegate.swift */; };
 		2250A58623CA3D08004E0ED7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2250A58523CA3D08004E0ED7 /* ViewController.swift */; };
@@ -16,6 +18,7 @@
 		2250A58E23CA3D0A004E0ED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2250A58C23CA3D0A004E0ED7 /* LaunchScreen.storyboard */; };
 		2250A59623CAEF8F004E0ED7 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2250A59523CAEF8F004E0ED7 /* stop.png */; };
 		2250A59823CAF056004E0ED7 /* TestSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2250A59723CAF056004E0ED7 /* TestSensorViewController.swift */; };
+		22791776240E67FB00BA89FC /* Scene1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22791775240E67FB00BA89FC /* Scene1ViewController.swift */; };
 		22F1C66423DB9AA900470602 /* TestUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1C66323DB9AA900470602 /* TestUIViewController.swift */; };
 		22F8CB8223F58A7A007E0554 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8CB8123F58A7A007E0554 /* TimerViewController.swift */; };
 		22F8CB8523FFDF9E007E0554 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F8CB8423FFDF9E007E0554 /* CoreLocation.framework */; };
@@ -23,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		220332DA23E15F5C00391A85 /* LineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineViewController.swift; sourceTree = SOURCE_ROOT; };
+		220AC67B2414E774008D9D92 /* Scene2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene2ViewController.swift; sourceTree = "<group>"; };
+		220AC67D2414E78D008D9D92 /* Scene3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene3ViewController.swift; sourceTree = "<group>"; };
 		2250A57E23CA3D08004E0ED7 /* Sensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2250A58123CA3D08004E0ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2250A58323CA3D08004E0ED7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +38,7 @@
 		2250A58F23CA3D0A004E0ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2250A59523CAEF8F004E0ED7 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		2250A59723CAF056004E0ED7 /* TestSensorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSensorViewController.swift; sourceTree = "<group>"; };
+		22791775240E67FB00BA89FC /* Scene1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene1ViewController.swift; sourceTree = "<group>"; };
 		22F1C66323DB9AA900470602 /* TestUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIViewController.swift; sourceTree = "<group>"; };
 		22F8CB8123F58A7A007E0554 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		22F8CB8423FFDF9E007E0554 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -70,14 +76,17 @@
 		2250A58023CA3D08004E0ED7 /* Sensor */ = {
 			isa = PBXGroup;
 			children = (
-				220332DA23E15F5C00391A85 /* LineViewController.swift */,
 				2250A58123CA3D08004E0ED7 /* AppDelegate.swift */,
 				2250A58323CA3D08004E0ED7 /* SceneDelegate.swift */,
 				2250A58523CA3D08004E0ED7 /* ViewController.swift */,
+				22791775240E67FB00BA89FC /* Scene1ViewController.swift */,
+				220AC67B2414E774008D9D92 /* Scene2ViewController.swift */,
+				220AC67D2414E78D008D9D92 /* Scene3ViewController.swift */,
 				2250A58723CA3D08004E0ED7 /* Main.storyboard */,
 				22F8CB8123F58A7A007E0554 /* TimerViewController.swift */,
 				22F1C66323DB9AA900470602 /* TestUIViewController.swift */,
 				2250A59723CAF056004E0ED7 /* TestSensorViewController.swift */,
+				220332DA23E15F5C00391A85 /* LineViewController.swift */,
 				2250A58A23CA3D0A004E0ED7 /* Assets.xcassets */,
 				2250A59523CAEF8F004E0ED7 /* stop.png */,
 				2250A58C23CA3D0A004E0ED7 /* LaunchScreen.storyboard */,
@@ -169,10 +178,13 @@
 				22F1C66423DB9AA900470602 /* TestUIViewController.swift in Sources */,
 				2250A58623CA3D08004E0ED7 /* ViewController.swift in Sources */,
 				220332DB23E15F5C00391A85 /* LineViewController.swift in Sources */,
+				22791776240E67FB00BA89FC /* Scene1ViewController.swift in Sources */,
 				22F8CB8223F58A7A007E0554 /* TimerViewController.swift in Sources */,
+				220AC67C2414E774008D9D92 /* Scene2ViewController.swift in Sources */,
 				2250A58223CA3D08004E0ED7 /* AppDelegate.swift in Sources */,
 				2250A59823CAF056004E0ED7 /* TestSensorViewController.swift in Sources */,
 				2250A58423CA3D08004E0ED7 /* SceneDelegate.swift in Sources */,
+				220AC67E2414E78D008D9D92 /* Scene3ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
