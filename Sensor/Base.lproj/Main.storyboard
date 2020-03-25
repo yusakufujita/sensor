@@ -18,18 +18,18 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姿勢を維持してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6E-it-V8H">
                                 <rect key="frame" x="20" y="88" width="374" height="46"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="hgA-Dl-MP9"/>
+                                    <constraint firstAttribute="height" constant="46" id="Ji2-gK-g8E"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehx-L1-oR9">
-                                <rect key="frame" x="140" y="672" width="134" height="126"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="126" id="oEZ-st-GcL"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="stop"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehx-L1-oR9">
+                                <rect key="frame" x="191" y="676" width="54" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" title="Button" image="icons8-ビール-50">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
                                 <connections>
                                     <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mg0-Yg-KRh"/>
                                 </connections>
@@ -37,18 +37,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Y6E-it-V8H" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="20K-fj-YTL"/>
-                            <constraint firstItem="Y6E-it-V8H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5g2-QB-ayb"/>
-                            <constraint firstItem="Ehx-L1-oR9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="8Qo-0Z-u38"/>
-                            <constraint firstItem="Y6E-it-V8H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FYo-1r-Jjg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ehx-L1-oR9" secondAttribute="bottom" constant="54" id="Ur8-HZ-kPN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ehx-L1-oR9" secondAttribute="trailing" constant="146" id="qYk-dW-coS"/>
+                            <constraint firstItem="Ehx-L1-oR9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="11" id="2UH-tl-hLD"/>
+                            <constraint firstItem="Y6E-it-V8H" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="JKa-dK-moc"/>
+                            <constraint firstItem="Y6E-it-V8H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oXK-mL-mBj"/>
+                            <constraint firstItem="Y6E-it-V8H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uEG-VY-WHN"/>
+                            <constraint firstItem="Ehx-L1-oR9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="253" id="uyG-OI-Cuh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="FR3-bv-oBm"/>
                     <connections>
                         <outlet property="sensorLabel" destination="Y6E-it-V8H" id="FzS-WW-XXk"/>
+                        <segue destination="jag-jj-50P" kind="presentation" identifier="Scene1" id="9YI-88-9MW"/>
+                        <segue destination="LR7-DM-JqG" kind="presentation" identifier="Scene2" id="GWs-jJ-NCK"/>
+                        <segue destination="fqU-FR-1MZ" kind="presentation" identifier="Scene3" id="tge-1n-DSJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -60,7 +62,7 @@
             <objects>
                 <viewController id="jag-jj-50P" customClass="Scene1ViewController" customModule="Sensor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UbT-0e-i6c">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="正常です" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xda-2c-S7C">
@@ -93,7 +95,7 @@
             <objects>
                 <viewController id="LR7-DM-JqG" customClass="Scene2ViewController" customModule="Sensor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pun-j8-etY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="やや酔っています" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoT-H0-LZR">
@@ -122,7 +124,7 @@
             <objects>
                 <viewController id="fqU-FR-1MZ" customClass="Scene3ViewController" customModule="Sensor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xwj-sH-jyX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="酔っています" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHF-Du-fUQ">
@@ -144,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ltl-Or-kfm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1939" y="1355"/>
+            <point key="canvasLocation" x="1941" y="1292"/>
         </scene>
         <!--Test Sensor View Controller-->
         <scene sceneID="ElO-RV-kgo">
@@ -252,6 +254,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-ビール-50" width="50" height="50"/>
         <image name="stop" width="128" height="128"/>
     </resources>
 </document>

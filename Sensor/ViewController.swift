@@ -17,17 +17,18 @@ class ViewController: UIViewController {
     
     
     @IBAction func button(_ sender: Any) {
-
+        sensorLabel.text = "計測中"
+        
     }
     @objc func judgment(x1:Double, y1:Double) -> Void {
 
            //if文にする
            if x1+y1 < 1 {
-            self.performSegue(withIdentifier: "Scene1ViewController", sender: nil)
+            self.performSegue(withIdentifier: "Scene1", sender: nil)
            }else if x1+y1 < 2 {
-            self.performSegue(withIdentifier: "Scene2ViewController", sender: nil)
+            self.performSegue(withIdentifier: "Scene2", sender: nil)
            }else {
-            self.performSegue(withIdentifier: "Scene3ViewController", sender: nil)
+            self.performSegue(withIdentifier: "Scene3", sender: nil)
            }
 
        }
@@ -67,13 +68,13 @@ class ViewController: UIViewController {
        print("attitude yaw  : \(motion.attitude.yaw * 180 / Double.pi)")
        
         //5秒後に止まる関数を作り止まらせる。
-        var timer = Timer()
+//        var timer = Timer()
         var timer2 = Timer()
-        timer = Timer.scheduledTimer(timeInterval: 5.0,
-                                    target: UIView(),
-                                    selector: #selector(self?.motionManager.stopDeviceMotionUpdates),
-                                    userInfo: nil,
-                                    repeats: false)
+//        timer = Timer.scheduledTimer(timeInterval: 5.0,
+//                                    target: UIView(),
+//                                    selector: #selector(self?.motionManager.stopDeviceMotionUpdates),
+//                                    userInfo: nil,
+//                                    repeats: false)
 //        timer = Timer.scheduledTimer(timeInterval: 5.0,
 //                                    target: UIView(),
 //                                    selector: #selector(UIView.addY(_:)),
@@ -93,7 +94,10 @@ class ViewController: UIViewController {
                     
         strongSelf.circleView?.addX(CGFloat(xAngle) * coefficient)
         strongSelf.circleView?.addY(CGFloat(yAngle) * coefficient)
-        })}}
+            }
+        )
+    }//viewDidLoad
+}//ViewController
        
 
 
@@ -124,12 +128,6 @@ class MyView: UIView {
             let myView = MyView(frame: CGRect(x:0,y:150,width: 500,height: 300))
             myView.backgroundColor = UIColor.white
             view.addSubview(myView)
-            //動かすgravitypositionを追加する
-//            gravityposition = UILabel.init(frame: CGRect(x: 185, y: 180, width: gravitypositionSize.width, height: gravitypositionSize.height))
-//            gravityposition.text = "G"
-//            gravityposition.backgroundColor = .red
-//            gravityposition.textAlignment = .center
-//            myView.addSubview(gravityposition)
             let size: CGFloat = 32.0
             let circleView = UIView()
             circleView.frame = CGRect(x:180, y:320 ,width: size, height:size)
