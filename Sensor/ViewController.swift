@@ -10,16 +10,12 @@ import UIKit
 import CoreMotion
 import AVFoundation
 
-    //CMMotionManagerのインスタンスを生成
-    let motionManager = CMMotionManager()
-    var circleView: UIView?
-    var targetView: UIView?
 class ViewController: UIViewController {
-            //CMMotionManagerのインスタンスを生成
-               let motionManager = CMMotionManager()
-               var circleView: UIView?
-               var targetView: UIView?
     
+        //CMMotionManagerのインスタンスを生成
+            let motionManager = CMMotionManager()
+            var circleView: UIView?
+            var targetView: UIView?
     @IBOutlet weak var sensorLabel: UILabel!
     
     @IBAction func button(_ sender: Any) {
@@ -34,8 +30,6 @@ class ViewController: UIViewController {
                //メソッドの外で宣言する
                var x = pow(xAngle, 2)
                var y = pow(xAngle, 2)
-                
-               // self?.judgment(x1: x, y1: y)
                // 係数を使って感度を調整する。
                let coefficient: CGFloat = 0.01
                            
@@ -54,18 +48,21 @@ class ViewController: UIViewController {
                                               userInfo: nil,
                                               repeats: false)
                    }
-               )
-    }
+              )
+        }
    
     override func viewDidLoad() {
         super.viewDidLoad()
             addCircleView()
-        let motionManager1 = CMMotionManager()
-        var xNum = motionManager1.deviceMotion?.attitude.roll
-        var yNum = motionManager1.deviceMotion?.attitude.pitch
-        self.judgment(x1: xNum ?? 0, y1: yNum ?? 0)
     }//viewDidLoad
+    
     @objc func judgment(x1:Double, y1:Double) -> Void {
+        var xAngle = motionManager.deviceMotion?.attitude.roll ?? 0 * 180 / Double.pi
+        var yAngle = motionManager.deviceMotion?.attitude.pitch ?? 0 * 180 / Double.pi
+                var x = pow(xAngle, 2)
+                var y = pow(xAngle, 2)
+                var x1 = x
+                var y1 = y
              //if文にする
              if x1+y1 < 1 {
               self.performSegue(withIdentifier: "Scene1", sender: nil)
@@ -75,7 +72,6 @@ class ViewController: UIViewController {
               self.performSegue(withIdentifier: "Scene3", sender: nil)
              }
     }
-
 }//ViewController
        
 
