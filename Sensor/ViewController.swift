@@ -10,6 +10,10 @@ import UIKit
 import CoreMotion
 import AVFoundation
 
+    //CMMotionManagerのインスタンスを生成
+    let motionManager = CMMotionManager()
+    var circleView: UIView?
+    var targetView: UIView?
 class ViewController: UIViewController {
 
     
@@ -17,6 +21,37 @@ class ViewController: UIViewController {
     
     @IBAction func button(_ sender: Any) {
         sensorLabel.text = "計測中"
+        //データの取得を開始します。データを取得したらwithHnadlerに指定したhandlerが実行されます。
+               motionManager.startDeviceMotionUpdates(using: .xMagneticNorthZVertical, to: OperationQueue.current!,withHandler: { [weak self] (motion, error) in
+               guard let motion = motion, error == nil else { return }
+               guard let strongSelf = self else { return }
+               //外で定義する(class直下で宣言)
+               var xAngle = motion.attitude.roll * 180 / Double.pi
+               var yAngle = motion.attitude.pitch * 180 / Double.pi
+                           //メソッドの外で宣言する
+               var x = pow(xAngle, 2)
+               var y = pow(xAngle, 2)
+               //self?.judgment(x1: x, y1: y)
+               // 係数を使って感度を調整する。
+               let coefficient: CGFloat = 0.01
+                           
+              print("attitude pitch: \(motion.attitude.pitch * 180 / Double.pi)")
+              print("attitude roll : \(motion.attitude.roll * 180 / Double.pi)")
+              print("attitude yaw  : \(motion.attitude.yaw * 180 / Double.pi)")
+               //更新周期を設定する
+               self?.motionManager.accelerometerUpdateInterval = 0.1
+               strongSelf.circleView?.addX(CGFloat(xAngle) * coefficient)
+               strongSelf.circleView?.addY(CGFloat(yAngle) * coefficient)
+                   }
+               )
+               //5秒後に遷移する
+               var timer = Timer()
+                 timer = Timer.scheduledTimer(timeInterval: 5.0,
+                                             target: self,
+                                             selector: #selector(ViewController.judgment),
+                                             userInfo: nil,
+                                             repeats: false)
+               
     }
    
     //CMMotionManagerのインスタンスを生成
@@ -28,40 +63,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
        
             addCircleView()
-        //プロパティでdevice-motion serviceが使用可能かチェックしています。
-        guard motionManager.isDeviceMotionAvailable else { return }
-        //100Hzを指定しています(1秒間に100回)。
-        motionManager.deviceMotionUpdateInterval = 1 / 100
-        //データの取得を開始します。データを取得したらwithHnadlerに指定したhandlerが実行されます。
-        motionManager.startDeviceMotionUpdates(using: .xMagneticNorthZVertical, to: OperationQueue.current!,withHandler: { [weak self] (motion, error) in
-        guard let motion = motion, error == nil else { return }
-        guard let strongSelf = self else { return }
-        //外で定義する(class直下で宣言)
-        var xAngle = motion.attitude.roll * 180 / Double.pi
-        var yAngle = motion.attitude.pitch * 180 / Double.pi
-                    //メソッドの外で宣言する
-        var x = pow(xAngle, 2)
-        var y = pow(xAngle, 2)
-        //self?.judgment(x1: x, y1: y)
-        // 係数を使って感度を調整する。
-        let coefficient: CGFloat = 0.01
-                    
-       print("attitude pitch: \(motion.attitude.pitch * 180 / Double.pi)")
-       print("attitude roll : \(motion.attitude.roll * 180 / Double.pi)")
-       print("attitude yaw  : \(motion.attitude.yaw * 180 / Double.pi)")
-        //更新周期を設定する
-        self?.motionManager.accelerometerUpdateInterval = 0.1
-        strongSelf.circleView?.addX(CGFloat(xAngle) * coefficient)
-        strongSelf.circleView?.addY(CGFloat(yAngle) * coefficient)
-            }
-        )
-        //5秒後に遷移する
-      var timer = Timer()
-        timer = Timer.scheduledTimer(timeInterval: 5.0,
-                                    target: self,
-                                    selector: #selector(ViewController.judgment),
-                                    userInfo: nil,
-                                    repeats: false)
     }//viewDidLoad
     @objc func judgment(x1:Double, y1:Double) -> Void {
              //if文にする
