@@ -15,26 +15,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var sensorLabel: UILabel!
     
-    
     @IBAction func button(_ sender: Any) {
         sensorLabel.text = "計測中"
-        
     }
-    @objc func judgment(x1:Double, y1:Double) -> Void {
-
-           //if文にする
-           if x1+y1 < 1 {
-            self.performSegue(withIdentifier: "Scene1", sender: nil)
-           }else if x1+y1 < 2 {
-            self.performSegue(withIdentifier: "Scene2", sender: nil)
-           }else {
-            self.performSegue(withIdentifier: "Scene3", sender: nil)
-           }
-
-       }
-
-    
-    
+   
     //CMMotionManagerのインスタンスを生成
     let motionManager = CMMotionManager()
     var circleView: UIView?
@@ -44,7 +28,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
        
             addCircleView()
-       
         //プロパティでdevice-motion serviceが使用可能かチェックしています。
         guard motionManager.isDeviceMotionAvailable else { return }
         //100Hzを指定しています(1秒間に100回)。
@@ -59,44 +42,38 @@ class ViewController: UIViewController {
                     //メソッドの外で宣言する
         var x = pow(xAngle, 2)
         var y = pow(xAngle, 2)
-        self?.judgment(x1: x, y1: y)
+        //self?.judgment(x1: x, y1: y)
         // 係数を使って感度を調整する。
         let coefficient: CGFloat = 0.01
                     
        print("attitude pitch: \(motion.attitude.pitch * 180 / Double.pi)")
        print("attitude roll : \(motion.attitude.roll * 180 / Double.pi)")
        print("attitude yaw  : \(motion.attitude.yaw * 180 / Double.pi)")
-       
-        //5秒後に止まる関数を作り止まらせる。
-//        var timer = Timer()
-        var timer2 = Timer()
-//        timer = Timer.scheduledTimer(timeInterval: 5.0,
-//                                    target: UIView(),
-//                                    selector: #selector(self?.motionManager.stopDeviceMotionUpdates),
-//                                    userInfo: nil,
-//                                    repeats: false)
-//        timer = Timer.scheduledTimer(timeInterval: 5.0,
-//                                    target: UIView(),
-//                                    selector: #selector(UIView.addY(_:)),
-//                                    userInfo: nil,
-//                                    repeats: false)
-           
-            
-            //上書きされるので別のを作る
-        timer2 = Timer.scheduledTimer(timeInterval: 5.0,
-                                     target: self,
-                                     selector: #selector(self?.judgment),
-                                     userInfo: nil,
-                                     repeats: false)
-        
         //更新周期を設定する
         self?.motionManager.accelerometerUpdateInterval = 0.1
-                    
         strongSelf.circleView?.addX(CGFloat(xAngle) * coefficient)
         strongSelf.circleView?.addY(CGFloat(yAngle) * coefficient)
             }
         )
+        //5秒後に遷移する
+      var timer = Timer()
+        timer = Timer.scheduledTimer(timeInterval: 5.0,
+                                    target: self,
+                                    selector: #selector(ViewController.judgment),
+                                    userInfo: nil,
+                                    repeats: false)
     }//viewDidLoad
+    @objc func judgment(x1:Double, y1:Double) -> Void {
+             //if文にする
+             if x1+y1 < 1 {
+              self.performSegue(withIdentifier: "Scene1", sender: nil)
+             }else if x1+y1 < 2 {
+              self.performSegue(withIdentifier: "Scene2", sender: nil)
+             }else {
+              self.performSegue(withIdentifier: "Scene3", sender: nil)
+             }
+    }
+
 }//ViewController
        
 

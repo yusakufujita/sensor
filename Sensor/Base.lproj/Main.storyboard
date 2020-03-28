@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EMr-0P-nd7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EMr-0P-nd7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -65,8 +65,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="正常です" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xda-2c-S7C">
-                                <rect key="frame" x="41" y="344" width="333" height="92"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正常です" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xda-2c-S7C">
+                                <rect key="frame" x="148.5" y="403.5" width="117.5" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -74,10 +74,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="sXW-Nk-NqV" firstAttribute="bottom" secondItem="Xda-2c-S7C" secondAttribute="bottom" constant="426" id="8eZ-24-H61"/>
-                            <constraint firstItem="Xda-2c-S7C" firstAttribute="top" secondItem="sXW-Nk-NqV" secondAttribute="top" constant="300" id="QSd-td-CUV"/>
-                            <constraint firstItem="Xda-2c-S7C" firstAttribute="centerX" secondItem="UbT-0e-i6c" secondAttribute="centerX" id="dib-5s-M2z"/>
-                            <constraint firstItem="Xda-2c-S7C" firstAttribute="leading" secondItem="sXW-Nk-NqV" secondAttribute="leading" constant="41" id="egw-DU-8i2"/>
+                            <constraint firstItem="Xda-2c-S7C" firstAttribute="centerY" secondItem="UbT-0e-i6c" secondAttribute="centerY" id="ZhA-B9-12d"/>
+                            <constraint firstItem="Xda-2c-S7C" firstAttribute="centerX" secondItem="UbT-0e-i6c" secondAttribute="centerX" id="kPg-dB-DY3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sXW-Nk-NqV"/>
                     </view>
@@ -98,8 +96,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="やや酔っています" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoT-H0-LZR">
-                                <rect key="frame" x="41" y="402" width="333" height="92"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="やや酔っています" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoT-H0-LZR">
+                                <rect key="frame" x="89.5" y="403.5" width="235" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -107,10 +105,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="hoT-H0-LZR" firstAttribute="centerY" secondItem="Pun-j8-etY" secondAttribute="centerY" id="6eb-Cf-Ev5"/>
-                            <constraint firstItem="hoT-H0-LZR" firstAttribute="top" secondItem="BPP-qJ-8KN" secondAttribute="top" constant="358" id="Sqo-l2-NuN"/>
-                            <constraint firstItem="hoT-H0-LZR" firstAttribute="centerX" secondItem="Pun-j8-etY" secondAttribute="centerX" id="mUa-4U-5zs"/>
-                            <constraint firstItem="hoT-H0-LZR" firstAttribute="leading" secondItem="BPP-qJ-8KN" secondAttribute="leading" constant="41" id="yWi-Jg-lhi"/>
+                            <constraint firstItem="hoT-H0-LZR" firstAttribute="centerX" secondItem="Pun-j8-etY" secondAttribute="centerX" id="Cgv-G0-Qr7"/>
+                            <constraint firstItem="hoT-H0-LZR" firstAttribute="centerY" secondItem="Pun-j8-etY" secondAttribute="centerY" id="zoj-Fc-hZ1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BPP-qJ-8KN"/>
                     </view>
@@ -127,8 +123,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="酔っています" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHF-Du-fUQ">
-                                <rect key="frame" x="41" y="402" width="333" height="92"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="酔っています" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHF-Du-fUQ">
+                                <rect key="frame" x="119" y="403.5" width="176.5" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -136,10 +132,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="UHF-Du-fUQ" firstAttribute="leading" secondItem="kgv-lK-t0e" secondAttribute="leading" constant="41" id="EkR-k2-Bq7"/>
-                            <constraint firstItem="UHF-Du-fUQ" firstAttribute="centerX" secondItem="xwj-sH-jyX" secondAttribute="centerX" id="RpO-NO-ZtK"/>
-                            <constraint firstItem="UHF-Du-fUQ" firstAttribute="centerY" secondItem="xwj-sH-jyX" secondAttribute="centerY" id="gtb-RQ-PcC"/>
-                            <constraint firstItem="UHF-Du-fUQ" firstAttribute="top" secondItem="kgv-lK-t0e" secondAttribute="top" constant="358" id="zcC-nv-giY"/>
+                            <constraint firstItem="UHF-Du-fUQ" firstAttribute="centerX" secondItem="xwj-sH-jyX" secondAttribute="centerX" id="5pD-IX-4cB"/>
+                            <constraint firstItem="UHF-Du-fUQ" firstAttribute="centerY" secondItem="xwj-sH-jyX" secondAttribute="centerY" id="jwg-q2-QPq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kgv-lK-t0e"/>
                     </view>
