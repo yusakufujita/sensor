@@ -10,6 +10,13 @@ import UIKit
 
 class Scene2ViewController: UIViewController {
 
+    
+    
+    @IBAction func back2(_ sender: Any) {
+           self.navigationController?.popToRootViewController(animated: true)
+
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

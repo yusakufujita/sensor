@@ -15,7 +15,10 @@ import AVFoundation
     var circleView: UIView?
     var targetView: UIView?
 class ViewController: UIViewController {
-
+            //CMMotionManagerのインスタンスを生成
+               let motionManager = CMMotionManager()
+               var circleView: UIView?
+               var targetView: UIView?
     
     @IBOutlet weak var sensorLabel: UILabel!
     
@@ -28,41 +31,39 @@ class ViewController: UIViewController {
                //外で定義する(class直下で宣言)
                var xAngle = motion.attitude.roll * 180 / Double.pi
                var yAngle = motion.attitude.pitch * 180 / Double.pi
-                           //メソッドの外で宣言する
+               //メソッドの外で宣言する
                var x = pow(xAngle, 2)
                var y = pow(xAngle, 2)
-               //self?.judgment(x1: x, y1: y)
+                
+               // self?.judgment(x1: x, y1: y)
                // 係数を使って感度を調整する。
                let coefficient: CGFloat = 0.01
                            
-              print("attitude pitch: \(motion.attitude.pitch * 180 / Double.pi)")
-              print("attitude roll : \(motion.attitude.roll * 180 / Double.pi)")
-              print("attitude yaw  : \(motion.attitude.yaw * 180 / Double.pi)")
+//              print("attitude roll : \(motion.attitude.roll * 180 / Double.pi)")
+//              print("attitude pitch: \(motion.attitude.pitch * 180 / Double.pi)")
+//              print("attitude yaw  : \(motion.attitude.yaw * 180 / Double.pi)")
                //更新周期を設定する
                self?.motionManager.accelerometerUpdateInterval = 0.1
                strongSelf.circleView?.addX(CGFloat(xAngle) * coefficient)
                strongSelf.circleView?.addY(CGFloat(yAngle) * coefficient)
+                //5秒後に遷移する
+                var timer = Timer()
+                  timer = Timer.scheduledTimer(timeInterval: 5.0,
+                                              target: self,
+                                              selector: #selector(ViewController.judgment),
+                                              userInfo: nil,
+                                              repeats: false)
                    }
                )
-               //5秒後に遷移する
-               var timer = Timer()
-                 timer = Timer.scheduledTimer(timeInterval: 5.0,
-                                             target: self,
-                                             selector: #selector(ViewController.judgment),
-                                             userInfo: nil,
-                                             repeats: false)
-               
     }
    
-    //CMMotionManagerのインスタンスを生成
-    let motionManager = CMMotionManager()
-    var circleView: UIView?
-    var targetView: UIView?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
             addCircleView()
+        let motionManager1 = CMMotionManager()
+        var xNum = motionManager1.deviceMotion?.attitude.roll
+        var yNum = motionManager1.deviceMotion?.attitude.pitch
+        self.judgment(x1: xNum ?? 0, y1: yNum ?? 0)
     }//viewDidLoad
     @objc func judgment(x1:Double, y1:Double) -> Void {
              //if文にする
@@ -123,6 +124,7 @@ extension UIView {
     func addX(_ x: CGFloat) {
         var frame:CGRect = self.frame
         frame.origin.x += x
+        var View = MyView()
         if let superViewFrame = superview?.frame {
             if superViewFrame.minX > frame.origin.x {
                 frame.origin.x = superViewFrame.minX
