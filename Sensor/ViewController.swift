@@ -13,15 +13,15 @@ import AVFoundation
 class ViewController: UIViewController {
     
         //CMMotionManagerのインスタンスを生成
-            let motionManager = CMMotionManager()
-            var circleView: UIView?
-            var targetView: UIView?
+        let motionManager = CMMotionManager()
+        var circleView: UIView?
+        var targetView: UIView?
     @IBOutlet weak var sensorLabel: UILabel!
     
     @IBAction func button(_ sender: Any) {
         sensorLabel.text = "計測中"
         //データの取得を開始します。データを取得したらwithHnadlerに指定したhandlerが実行されます。
-               motionManager.startDeviceMotionUpdates(using: .xMagneticNorthZVertical, to: OperationQueue.current!,withHandler: { [weak self] (motion, error) in
+        motionManager.startDeviceMotionUpdates(using: .xMagneticNorthZVertical, to: OperationQueue.current!,withHandler: { [weak self] (motion, error) in
                guard let motion = motion, error == nil else { return }
                guard let strongSelf = self else { return }
                //外で定義する(class直下で宣言)
@@ -31,8 +31,7 @@ class ViewController: UIViewController {
                var x = pow(xAngle, 2)
                var y = pow(xAngle, 2)
                // 係数を使って感度を調整する。
-                let coefficient: CGFloat = 0.01
-                           
+            let coefficient: CGFloat = 0.8
 //              print("attitude roll : \(motion.attitude.roll * 180 / Double.pi)")
 //              print("attitude pitch: \(motion.attitude.pitch * 180 / Double.pi)")
 //              print("attitude yaw  : \(motion.attitude.yaw * 180 / Double.pi)")
@@ -41,8 +40,8 @@ class ViewController: UIViewController {
                strongSelf.circleView?.addX(CGFloat(xAngle) * coefficient)
                strongSelf.circleView?.addY(CGFloat(yAngle) * coefficient)
                 //5秒後に遷移する
-                var timer = Timer()
-                  timer = Timer.scheduledTimer(timeInterval: 5.0,
+               var timer = Timer()
+               timer = Timer.scheduledTimer(timeInterval: 5.0,
                                               target: self,
                                               selector: #selector(ViewController.judgment),
                                               userInfo: nil,
@@ -104,8 +103,8 @@ class MyView: UIView {
  private extension ViewController  {
        // 動かすUIViewを追加する
           func addCircleView() {
-            let myView = MyView(frame: CGRect(x:0,y:150,width: 500,height: 300))
-            myView.backgroundColor = UIColor.white
+            let myView = MyView(frame: CGRect(x:0,y:150,width: 380,height: 300))
+            myView.backgroundColor = UIColor.black
             view.addSubview(myView)
             let size: CGFloat = 32.0
             let circleView = UIView()
@@ -124,7 +123,7 @@ extension UIView {
     func addX(_ x: CGFloat) {
         var frame:CGRect = self.frame
         frame.origin.x += x
-        let backView = MyView(frame: CGRect(x:0,y:150,width: 500,height: 300))
+        let backView = MyView(frame: CGRect(x:0,y:150,width: 380,height: 300))
         if let superViewFrame = backView.frame as Optional{
             if superViewFrame.minX > frame.origin.x {
                 frame.origin.x = superViewFrame.minX
