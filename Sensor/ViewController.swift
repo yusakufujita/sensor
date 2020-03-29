@@ -31,11 +31,11 @@ class ViewController: UIViewController {
                var x = pow(xAngle, 2)
                var y = pow(xAngle, 2)
                // 係数を使って感度を調整する。
-               let coefficient: CGFloat = 0.01
+                let coefficient: CGFloat = 0.01
                            
-//              print("attitude roll : \(motion.attitude.roll * 180 / Double.pi)")
-//              print("attitude pitch: \(motion.attitude.pitch * 180 / Double.pi)")
-//              print("attitude yaw  : \(motion.attitude.yaw * 180 / Double.pi)")
+              print("attitude roll : \(motion.attitude.roll * 180 / Double.pi)")
+              print("attitude pitch: \(motion.attitude.pitch * 180 / Double.pi)")
+              print("attitude yaw  : \(motion.attitude.yaw * 180 / Double.pi)")
                //更新周期を設定する
                self?.motionManager.accelerometerUpdateInterval = 0.1
                strongSelf.circleView?.addX(CGFloat(xAngle) * coefficient)
@@ -120,8 +120,8 @@ extension UIView {
     func addX(_ x: CGFloat) {
         var frame:CGRect = self.frame
         frame.origin.x += x
-        var View = MyView()
-        if let superViewFrame = superview?.frame {
+        let backView = MyView(frame: CGRect(x:0,y:150,width: 500,height: 300))
+        if let superViewFrame = backView.frame as Optional{
             if superViewFrame.minX > frame.origin.x {
                 frame.origin.x = superViewFrame.minX
             } else if superViewFrame.maxX - frame.width < frame.origin.x {
@@ -135,7 +135,8 @@ extension UIView {
      func addY(_ y: CGFloat) {
         var frame:CGRect = self.frame
         frame.origin.y += y
-        if let superViewFrame = superview?.frame {
+        let backView = MyView(frame: CGRect(x:0,y:150,width: 500,height: 300))
+        if let superViewFrame = backView.frame as Optional{
             if superViewFrame.minY > frame.origin.y {
                 frame.origin.y = superViewFrame.minY
             } else if superViewFrame.maxY - frame.height < frame.origin.y {
