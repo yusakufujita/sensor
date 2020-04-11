@@ -31,7 +31,7 @@ class ViewController: UIViewController {
                var x = pow(xAngle, 2)
                var y = pow(xAngle, 2)
                // 係数を使って感度を調整する。
-            let coefficient: CGFloat = 0.8
+            let coefficient: CGFloat = 0.01
 //              print("attitude roll : \(motion.attitude.roll * 180 / Double.pi)")
 //              print("attitude pitch: \(motion.attitude.pitch * 180 / Double.pi)")
 //              print("attitude yaw  : \(motion.attitude.yaw * 180 / Double.pi)")
@@ -66,15 +66,33 @@ class ViewController: UIViewController {
                 var y1 = y
         print("attitude roll :\(x)")
         print("attitude pitch :\(y)")
-             //if文にする
-             if x1+y1 < 1 {
-              self.performSegue(withIdentifier: "Scene1", sender: nil)
-             }else if x1+y1 < 4 {
-              self.performSegue(withIdentifier: "Scene2", sender: nil)
-             }else {
-              self.performSegue(withIdentifier: "Scene3", sender: nil)
-             }
+        
+        if x1+y1 < 1 {
+         let storyboard = self.storyboard!
+         let nextView = storyboard.instantiateViewController(withIdentifier: "Scene1ViewController")
+         self.present(nextView, animated: true, completion: nil)
+
+        }else if x1+y1 < 4 {
+         self.performSegue(withIdentifier: "Scene2", sender: nil)
+        }else {
+         self.performSegue(withIdentifier: "Scene3", sender: nil)
+        }
+        
+//             //if文にする
+//             if x1+y1 < 1 {
+//              self.performSegue(withIdentifier: "Scene1", sender: nil)
+//             }else if x1+y1 < 4 {
+//              self.performSegue(withIdentifier: "Scene2", sender: nil)
+//             }else {
+//              self.performSegue(withIdentifier: "Scene3", sender: nil)
+//             }
     }
+    // センサー取得を止める場合
+       func stopAccelerometer(){
+           if (motionManager.isAccelerometerActive) {
+               motionManager.stopAccelerometerUpdates()
+           }
+       }
 }//ViewController
        
 
@@ -83,10 +101,8 @@ class ViewController: UIViewController {
 class MyView: UIView {
        override func draw(_ rect: CGRect) {
            let path = UIBezierPath()
-           
            path.move(to: CGPoint(x: 90, y: 190))
            path.addLine(to:CGPoint(x: 300, y: 190))
-          
            path.move(to: CGPoint(x: 195, y: 85))
            path.addLine(to:CGPoint(x: 195, y: 295))
            path.lineWidth = 5.0 // 線の太さ
@@ -104,7 +120,7 @@ class MyView: UIView {
        // 動かすUIViewを追加する
           func addCircleView() {
             let myView = MyView(frame: CGRect(x:0,y:150,width: 380,height: 300))
-            myView.backgroundColor = UIColor.black
+            myView.backgroundColor = UIColor.white
             view.addSubview(myView)
             let size: CGFloat = 32.0
             let circleView = UIView()
@@ -116,7 +132,6 @@ class MyView: UIView {
             self.circleView = circleView
             
           }
-       
    }
 extension UIView {
     /// X方向にViewを動かす

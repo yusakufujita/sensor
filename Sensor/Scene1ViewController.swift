@@ -7,19 +7,26 @@
 //
 
 import UIKit
+import CoreMotion
 
 class Scene1ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     
     
-    
+    var a = ViewController.judgment
+     let motionManager = CMMotionManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        stopAccelerometer()
         // Do any additional setup after loading the view.
     }
-    
-    
+
+    // センサー取得を止める場合
+    func stopAccelerometer(){
+        if (motionManager.isAccelerometerActive) {
+            motionManager.stopAccelerometerUpdates()
+        }
+    }
     
 
     /*
