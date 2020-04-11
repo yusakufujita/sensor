@@ -73,9 +73,14 @@ class ViewController: UIViewController {
          self.present(nextView, animated: true, completion: nil)
 
         }else if x1+y1 < 4 {
-         self.performSegue(withIdentifier: "Scene2", sender: nil)
+            let storyboard = self.storyboard!
+            let nextView = storyboard.instantiateViewController(withIdentifier: "Scene2ViewController")
+            self.present(nextView, animated: true, completion: nil)
         }else {
-         self.performSegue(withIdentifier: "Scene3", sender: nil)
+            let storyboard = self.storyboard!
+            let nextView = storyboard.instantiateViewController(withIdentifier: "Scene3ViewController")
+                       self.present(nextView, animated: true, completion: nil)
+         
         }
         
 //             //if文にする

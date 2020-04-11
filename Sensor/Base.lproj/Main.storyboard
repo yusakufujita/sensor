@@ -48,8 +48,6 @@
                     <navigationItem key="navigationItem" id="FR3-bv-oBm"/>
                     <connections>
                         <outlet property="sensorLabel" destination="Y6E-it-V8H" id="FzS-WW-XXk"/>
-                        <segue destination="LR7-DM-JqG" kind="presentation" identifier="Scene2" id="GWs-jJ-NCK"/>
-                        <segue destination="fqU-FR-1MZ" kind="presentation" identifier="Scene3" id="tge-1n-DSJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -147,16 +145,16 @@
         <!--Scene2 View Controller-->
         <scene sceneID="jNd-Ch-fxO">
             <objects>
-                <viewController id="LR7-DM-JqG" customClass="Scene2ViewController" customModule="Sensor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Scene2ViewController" id="LR7-DM-JqG" customClass="Scene2ViewController" customModule="Sensor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pun-j8-etY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="magnolia-4956533_1920" translatesAutoresizingMaskIntoConstraints="NO" id="Py4-kd-jCB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="やや酔っています" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoT-H0-LZR">
-                                <rect key="frame" x="89.5" y="403.5" width="235" height="35"/>
+                                <rect key="frame" x="89.5" y="430.5" width="235" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -201,16 +199,16 @@
         <!--Scene3 View Controller-->
         <scene sceneID="OoS-5g-hBa">
             <objects>
-                <viewController id="fqU-FR-1MZ" customClass="Scene3ViewController" customModule="Sensor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Scene3ViewController" id="fqU-FR-1MZ" customClass="Scene3ViewController" customModule="Sensor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xwj-sH-jyX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="spiral-2661060_1920" translatesAutoresizingMaskIntoConstraints="NO" id="HKr-QD-Wpi">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="酔っています" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHF-Du-fUQ">
-                                <rect key="frame" x="119" y="403.5" width="176.5" height="35"/>
+                                <rect key="frame" x="119" y="430.5" width="176.5" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
